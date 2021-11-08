@@ -11,14 +11,6 @@ toyota = Car()
 # False
 
 
-
-
-
-
-
-
-
-
 class Car:
     functionalCostPerMth = 700 
     def __init__(self, price, topspeed):
@@ -35,16 +27,6 @@ ferrari = Car(price = 232_525, topspeed = 320)
 # 232525
 
 
-
-
-
-
-
-
-
-
-
-
 # Docstring: show useful information when we print class instance (object)
 class Car:
     def __init__(self, name):
@@ -55,16 +37,6 @@ class Car:
 
 # honda = Car(name = "Tony")
 # print(honda)
-
-
-
-
-
-
-
-
-
-
 
 
 class Car:
