@@ -1,0 +1,10 @@
+cd C:\Users\hariiz\AppData\Local\Programs\Python\Python39\Scripts\Daniel
+git init
+git status
+git add -A
+git commit -m "commit message”
+git remote add origin https://github.com/gucky0/Daniel
+git remote -v
+git push -f origin main
+
+

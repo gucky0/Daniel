@@ -1,0 +1,127 @@
+# general functions
+SHOW DATABASES
+SHOW TABLES
+SELECT * from table_name
+
+# table functions
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+# table data types
+INT
+DECIMAL(M,N) - N decimal places
+VARCHAR(1) 	 - 	string
+BLOB 		 - binary
+DATE		 - YYYY-MM-DD
+TIMESTAMP 	 - date and time
+
+# table options
+PRIMARY KEY(column_name) - not null and unique will be set automatically
+FOREIGN KEY(column_name) REFERENCES table_name(column_name) ON DELETE SET NULL
+ON DELETE CASCADE - delete related rows
+AUTO_INCREMENT
+NOT NULL 
+UNIQUE 
+DEFAULT
+
+# SQL functions
+ORDER BY column_name DESC
+WHERE condition
+<> - not equals to
+column_name in (var1, var2)
+column_name LIKE '%phrase_'
+GROUP BY column_name
+FROM table_name
+UPDATE table_name SET column_name = value WHERE condition
+DELETE FROM table_name WHERE condition
+LIMIT num
+ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES table_name(column_name) ON DELETE SET NULL
+SELECT DISTINCT column_name
+SELECT COUNT(column_name)
+SELECT AVG(column_name)
+SELECT SUM(column_name)
+UNION
+SELECT column_name AS alias
+SELECT table_name.column_name, table_name.column_name FROM table_name JOIN table_name ON table_name.column_name = table_name.column_name
+SELECT table_name.column_name, table_name.column_name FROM table WHERE table_name.column_name IN (
+	SELECT table_name.column_name FROM table WHERE condition);
+DELIMITER $$
+CREATE
+	TRIGGER my_trigger BEFORE INSERT
+	ON table_name
+	FOR EACH ROW BEGIN
+		IF NEW.column_name = val THEN
+			INSERT INTO my_trigger VALUES(NEW.column_name);
+		ELSEIF NEW.column_name = val THEN
+			INSERT INTO my_trigger VALUES(NEW.column_name);
+		ELSE
+			INSERT INTO my_trigger VALUES(NEW.column_name);
+		END IF;
+	END $$
+DELIMITER ;
+
+relationship
+N:M
+a student can take many classes, classes can be taken by many students 
+scores - student_id, class_id (composite key - both primary), gpa (attribute)
+
+student 
+sykkuno
+fuslie
+rae
+
+classes
+eng
+math
+
+scores
+sykkuno eng 40
+sykkuno math 100
+fuslie eng 80
+fuslie math 50
+rae eng 50
+rae math 50
+this means that for a unique student and class, we can input the respective score 
+___________
+1:M
+an employee can take 1 position in a company, a company has many employees
+employee - role_id (foreign, can be NULL), position - pos_id (primary), 1:M
+
+employee
+linda 200
+huijun 200
+xudong 201
+weemeng 201
+
+department
+200 biology
+201 mechanical 
+this means that linda and huijun are from the biology department while xudong and weemeng are from the mechanical department
+
+___________
+1:1
+each subject has one teaching head, each teaching head is in charge of 1 subject 
+employee - emp_id (primary), emp_head - head_id (foreign), 3:3
+
+employee
+rafael 100
+eugene 101
+ramirez 102
+penghoi 103 
+
+department_head (id head_id)
+coding 100
+marketing 102
+this means that rafael is the coding head and ramirez is the marketing head and the other 2 employees are not heads of any department
+
+
+
