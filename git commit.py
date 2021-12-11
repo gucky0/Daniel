@@ -1,7 +1,7 @@
 import os
 repo = r"C:\Users\hariiz\AppData\Local\Programs\Python\Python39\Scripts\Daniel"
 
-commit_message = "hello"
+commit_message = "Updated SQL Lesson"
 os.chdir(repo)
 
 line2 = "git init"

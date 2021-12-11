@@ -75,9 +75,9 @@ a student can take many classes, classes can be taken by many students
 scores - student_id, class_id (composite key - both primary), gpa (attribute)
 
 student 
-sykkuno
-fuslie
-rae
+001 sykkuno
+002 fuslie
+003 rae
 
 classes
 eng
