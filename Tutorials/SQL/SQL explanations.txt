@@ -123,5 +123,10 @@ coding 100
 marketing 102
 this means that rafael is the coding head and ramirez is the marketing head and the other 2 employees are not heads of any department
 
+useful links:
+https://www.youtube.com/watch?v=HXV3zeQKqGY&t=4974s
+https://www.youtube.com/watch?v=p3qvj9hO_Bo
+https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html
+https://www.w3schools.com/python/python_mysql_join.asp
 
 

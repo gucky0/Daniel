@@ -8,7 +8,7 @@ line2 = "git init"
 line3 = "git status"
 line4 = "git add -A"
 line5 = f'git commit -m "{commit_message}"'
-line6 = "git remote add origin https://github.com/gucky0/Daniel"
+##line6 = "git remote add origin https://github.com/gucky0/Daniel"
 line7 = "git remote -v"
 line8 = "git push -f origin main"
 

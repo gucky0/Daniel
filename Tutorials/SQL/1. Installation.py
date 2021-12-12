@@ -63,7 +63,7 @@ table_name = input("Table: ")
 mycursor.execute(f"DESC {table_name}")
 print(f"headers: {[x[0] for x in mycursor]}")
 
-input()
+os.system("pause")
 
 
 
