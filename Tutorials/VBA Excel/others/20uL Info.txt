@@ -1,0 +1,70 @@
+thermal consistency check
+
+#set-up - sensor
+
+A) use 1 thermocouple with correct vol to set settings
+	- use thermal: no rt, not hot, 93, 58, 5s, 30cycles - saved as "Thermocouple Testing"
+	- image changes - stop, prep. save, start heating, start
+	0) set settings_vol
+	1) pic: sensorName_Simple, benchmark before & note water level
+	2) note: pcr, mac, exp, temp, 4 data
+	3) pic: benchmark after & note water level
+	4) repeat 
+	- data to be collected: settings info, sensorName, mac, exp, pcr, analyze x2, water_DayNo, 4data
+	5)run for all thermocouple - same as A w/o step 0
+
+B) measure: total, metal, oil, water_DayNo, glass
+   pic of labelled cap
+
+
+C) 	PPT - SensorBatch - sensorName_Simple (vol benchmark for first)
+		day1: take pic labelled, run, machine number, exp number, raw pcr, take pic labelled
+	excel1 - SensorProbeTracking
+		day1: data1, total, metal, oil
+		day2: data2
+		after approved: sensorName_Long
+	excel2 - yyyymmdd_Capillary Evaluation_RX - sensorName_Simple
+		day1: water level, total, glass, metal
+		day2: water level
+		day3: water level
+	wordxNo - Themocouple_QC_Report_SensorName - 
+		day1: temp1, date, water, oil
+		day2: temp2
+		after approved: pic of sensorName_Long
+
+PPT and Excel1:
+\\Star-Array\Star-Array\01_General Technical Files\01_Projects\P15_XDive\05_Thermal Related\Data-ZH
+\\Star-Array\Star-Array\01_General Technical Files\01_Projects\P15_XDive\05_Thermal Related\07_Sensor Prob Tracking
+
+settings_uL: 	hot offset: 	
+		image offset: 	
+		low offset: 	
+		first_high:	
+		first_low:	
+
+Sensor1 (20uL Benchmark)
+PeakV: 0001
+settings path: C:\PeakV\XDive
+exp path: C:\P15_User Data\Experiment Data\tech
+water level before: 10.8
+total: 	33.00
+glass: 	19.35
+metal: 	6.95
+oil:	2.19
+
+date: 
+exp1: 
+4 data: 
+exp2: 
+4 data:
+water_Day1:
+
+date:
+exp: 
+4 data:
+water_Day2:
+
+date:
+exp: 
+4 data: 
+water_Day3: 

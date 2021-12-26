@@ -1,0 +1,8 @@
+1st col: numeric auto-increment: SFX
+2nd col: /
+3rd col: extract data? color gradient/
+4th col: extract data?
+temperature input: hightlight if different from previous (cell above)
+within target: conditional based on data Y/N, highlight/
+sensor vol (and other similar data): collate at different description sheet
+layout: cleaner non-grid layout, borders, graphs and analysis

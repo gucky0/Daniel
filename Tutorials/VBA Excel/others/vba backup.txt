@@ -1,0 +1,121 @@
+'-----<Global Variables>-----'
+Option Explicit
+Public Const Path = "E:\VBA test"
+Public Const wbName = Path & "\" & "to" & ".xlsx" 'template
+Public Const wbName2 = Path & "\" & "data" & ".xlsx" 'fixed
+Public Const wbName3 = Path & "\" & "boo" & ".docx" 'template
+Public Const wbName4 = Path & "\" & "pp" & ".pptx" 'fixed
+
+Sub Init()
+    With Application
+        .DisplayAlerts = False
+        .ScreenUpdating = False
+    End With
+End Sub
+
+Sub wb1()
+'check if folder name matches date
+Workbooks.Open (ThisWorkbook.Path & "\" & "to" & ".xlsx")
+With ActiveWorkbook
+    .Worksheets(1).Range("B3:F6").Value = Workbooks(1).Worksheets(1).Range("B4:F7").Value
+    .SaveAs FileName:=ThisWorkbook.Path & "\" & "to2", FileFormat:=xlWorkbookDefault
+    .Close savechanges:=True
+End With: End Sub
+
+Sub wb2()
+Workbooks.Open ("C:\Users\hariiz\Desktop\hafiz\teach\excel\VBA test\data.xlsx")
+    Call addIn("Sensor No", "C21")
+    'Call addIn("Distance:Prob To Glass/Metal Bottom", "D21")
+    'Call addIn("Total Length", "E21")
+    Call addIn("Manufacture Date mm/dd/yyyy", "Left(C14),10")
+    'Call addIn("Mean  Maximum Temperature (°C)", "H21:K21")
+Workbooks(2).Close True
+'Workbooks(1).Close True
+End Sub
+
+'-----<Supporting Procedures>-----'
+Sub addIn(search As String, setRng As String)
+Dim cell As Range, NewCol As String, LastRow As String, RowCount As Integer
+Set cell = Workbooks(2).Worksheets(2).Cells.Find(what:=search, LookIn:=xlValues)
+    NewCol = Split((Columns(cell.Column).Address(, 0)), ":")(0)
+    LastRow = ActiveSheet.Cells(cell.Row, cell.Column).End(xlDown).Row + 1
+    If Len(setRng) = 3 Then 'might have to change to <> 10 cuz of mean
+        Workbooks(1).Sheets(1).Range(setRng).Copy
+        Workbooks(2).Worksheets(2).Cells(LastRow, NewCol).PasteSpecial Paste:=xlPasteValues
+    Else
+        LastRow = ActiveSheet.Cells(cell.Row, cell.Column).End(xlDown).Row + 1
+        Workbooks(2).Worksheets(2).Cells(LastRow, NewCol) = Left(Workbooks(1).Sheets(1).[C14], 10)
+    End If
+End Sub
+
+'__________________________________________________________________________________________'
+'Comments
+
+Sub excel()
+'= INDIRECT("[" & Date & "_Capillary Sensor Evaluation.xlsxx]Sheet1'!$C4
+'= cells("filename")
+End Sub
+
+Sub vba()
+'Debug.Print ThisWorkbook.Name, ActiveWorkbook.Name, Workbooks(1).Name, Workbooks(2).Name
+'cell.Offset(RowOffset:=1).Select
+End Sub
+
+Sub skeleton()
+'global
+'Init
+'wb1 save as
+'wb2 Save
+'wb3 save as x
+'wb4 save x
+End Sub
+
+Sub qns()
+'which var to set to Nothing?
+'refer to cells? (x=wb(2).ws(2).cells)
+'shorter way to do CDE for addIn (array, $C select4)
+'ppt
+'images
+'ifvspastevalues
+'savecheckdateasboolfunction (FileName = VBA.FileSystem.Dir(PathName) If FileName <> VBA.Constants.vbNullString Then)
+'ActiveCell.Address
+'another init for filename
+'Named Ranges for data (ID,Probe..)
+End Sub
+
+Sub references()
+'https://powerspreadsheets.com/excel-vba-range-object/
+End Sub
+
+Sub Procedure()
+'
+'Sub Init0()
+'Global Fromdatatest As Variant
+'Fromdatatest = Range("HI")(1)
+'Dim PathFolderArray() As Variant
+'Dim FileName As String
+'Dim i, PathNum As Integer
+'Dim wb As Workbook
+'PathFolderArray = Array("C:\Users\aloys\Desktop\VBA test\", "C:\Users\hariiz\Desktop\hafiz\teach\excel\VBA test\", "C:\Users\XDive\Desktop\VBA test\")
+'PathNum = UBound(PathFolderArray) - LBound(PathFolderArray) + 1
+'    For i = 0 To PathNum - 1
+'        FileName = vba.FileSystem.Dir(PathFolderArray(i) & PathTo)
+'        If FileName <> vba.Constants.vbNullString Then
+'            PathFolder = PathFolderArray(i)
+'            ToRange = PathFolder & PathTo
+'            WbData = PathFolder & PathData
+'            Workbooks.Open (WbData)
+'            DataRow = ActiveSheet.Cells(1, 1).End(xlDown).Row + 1
+'            Exit For
+'        End If
+'    Next i
+'End Sub
+'
+'Sub addInSpecial0()
+'Dim cell As Range, NewCol As String, LastRow As String, RowCount As Integer
+'Set cell = Workbooks(2).Worksheets(2).Cells.Find(what:="Manufacture Date mm/dd/yyyy", LookIn:=xlValues)
+'    NewCol = Split((Columns(cell.Column).Address(, 0)), ":")(0)
+'    LastRow = ActiveSheet.Cells(cell.Row, cell.Column).End(xlDown).Row + 1
+'    Workbooks(2).Worksheets(2).Cells(LastRow, NewCol) = Left(Workbooks(1).Sheets(1).[C14], 10)
+'End Sub
+End Sub
