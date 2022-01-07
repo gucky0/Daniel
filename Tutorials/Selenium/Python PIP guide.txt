@@ -1,0 +1,26 @@
+Hello new python user!
+
+Install python: 
+https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe
+
+Run the executable file (in your downloads folder): 
+C:\Users\<username>\Downloads\python-3.10.1-amd64.exe
+
+Tick add python to path
+
+Open this file
+C:\Users\Admin\AppData\Local\Programs\Python\Python310\Lib\idlelib\idle.bat
+
+Your modules are here:
+C:\Users\Admin\AppData\Local\Programs\Python\Python310\Lib
+
+Scripts here:
+C:\Users\Admin\AppData\Local\Programs\Python\Python310\Scripts
+
+To install modules:
+open Command Prompt (cmd):
+cd "<module-path>"
+py -m pip instal <module-name>
+
+installed modules can be found here:
+C:\Users\Admin\AppData\Local\Programs\Python\Python310\Lib\site-packages\selenium
