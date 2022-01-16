@@ -1,0 +1,28 @@
+generating excel files/
+- login
+https://org.alldebitpay.com/adminUserAction/adminLogin.do
+OID20171219500005
+TripleA
+tripleA123
+- surfing website (webdriver)
+https://org.alldebitpay.com/selectTradeAction/selectTrading.do
+- inputting options (date)
+StartDate, EndDate -- 2019-07-06 
+TransactionStatus -- Successful
+Query
+Export
+OK
+_____________________________________
+
+open and read excel files (refund included)/
+- opening file from downloads
+df -- "D:\Downloads\Online+Transaction+Query20220109171556.xls"
+op -- "dani-1July 2019.csv"
+- actual refund status: blank
+- sum of transaction amt and MDR for every pay type
+- current xlsx date, pay type column, MDR
+_____________________________________
+
+update main excel file/
+- loop for each month
+- output "dani-1July 2019.xlsx"
